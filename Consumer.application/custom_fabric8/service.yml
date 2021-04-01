@@ -1,0 +1,21 @@
+metadata:
+  name: consume-svc
+  namespace: default
+  labels:
+    container: consumer
+    provider: fabric8
+    project: consumer
+    group: com.tibco.bw
+kind: Service
+spec:
+  selector:
+    container: consumer
+    provider: fabric8
+    project: consumer
+    group: com.tibco.bw
+  type: NodePort
+  ports:
+  - protocol: TCP
+    port: 7000
+    targetPort: 7000
+    nodePort: 32170

@@ -1,0 +1,97 @@
+{
+  "apiVersion" : "v1",
+  "kind" : "Service",
+  "metadata" : {
+    "annotations" : {
+      "fabric8.io/git-branch" : "main",
+      "fabric8.io/git-commit" : "5c4f29822ec9964f5f4902420f2b5f053668c63a",
+      "fabric8.io/git-url" : "https://github.com/chungsju/bwce_provider_consumer_CICD.git"
+    },
+    "creationTimestamp" : "2021-04-01T08:02:37Z",
+    "labels" : {
+      "app" : "Consumer.application",
+      "container" : "consumer",
+      "expose" : "true",
+      "group" : "com.tibco.bw",
+      "project" : "consumer",
+      "provider" : "fabric8",
+      "version" : "1.0.0-SNAPSHOT"
+    },
+    "managedFields" : [ {
+      "apiVersion" : "v1",
+      "fieldsType" : "FieldsV1",
+      "fieldsV1" : {
+        "f:metadata" : {
+          "f:annotations" : {
+            "." : { },
+            "f:fabric8.io/git-branch" : { },
+            "f:fabric8.io/git-commit" : { },
+            "f:fabric8.io/git-url" : { }
+          },
+          "f:labels" : {
+            "." : { },
+            "f:app" : { },
+            "f:container" : { },
+            "f:expose" : { },
+            "f:group" : { },
+            "f:project" : { },
+            "f:provider" : { },
+            "f:version" : { }
+          }
+        },
+        "f:spec" : {
+          "f:externalTrafficPolicy" : { },
+          "f:ports" : {
+            "." : { },
+            "k:{\"port\":80,\"protocol\":\"TCP\"}" : {
+              "." : { },
+              "f:port" : { },
+              "f:protocol" : { },
+              "f:targetPort" : { }
+            }
+          },
+          "f:selector" : {
+            "." : { },
+            "f:app" : { },
+            "f:container" : { },
+            "f:group" : { },
+            "f:project" : { },
+            "f:provider" : { }
+          },
+          "f:sessionAffinity" : { },
+          "f:type" : { }
+        }
+      },
+      "manager" : "okhttp",
+      "operation" : "Update",
+      "time" : "2021-04-01T08:02:37Z"
+    } ],
+    "name" : "consume-svc",
+    "namespace" : "default",
+    "resourceVersion" : "2831023",
+    "uid" : "5b54e1f0-7a14-41f4-81b2-95146da4c940"
+  },
+  "spec" : {
+    "clusterIP" : "10.108.105.14",
+    "externalTrafficPolicy" : "Cluster",
+    "ports" : [ {
+      "nodePort" : 30488,
+      "port" : 80,
+      "protocol" : "TCP",
+      "targetPort" : 7000
+    } ],
+    "selector" : {
+      "app" : "Consumer.application",
+      "container" : "consumer",
+      "group" : "com.tibco.bw",
+      "project" : "consumer",
+      "provider" : "fabric8"
+    },
+    "sessionAffinity" : "None",
+    "type" : "NodePort",
+    "clusterIPs" : [ "10.108.105.14" ]
+  },
+  "status" : {
+    "loadBalancer" : { }
+  }
+}

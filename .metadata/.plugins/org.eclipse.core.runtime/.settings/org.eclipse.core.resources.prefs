@@ -1,0 +1,4 @@
+description.buildorder=Consumer/Consumer.application.parent/Provider/Provider.application.parent/Provider.application/Consumer.application
+description.defaultbuildorder=false
+eclipse.preferences.version=1
+version=1

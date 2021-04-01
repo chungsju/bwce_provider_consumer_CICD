@@ -1,0 +1,30 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    fabric8.io/git-commit: 5c4f29822ec9964f5f4902420f2b5f053668c63a
+    fabric8.io/git-branch: main
+    fabric8.io/git-url: https://github.com/chungsju/bwce_provider_consumer_CICD.git
+  labels:
+    container: consumer
+    provider: fabric8
+    project: consumer
+    group: com.tibco.bw
+    expose: "true"
+    app: Consumer.application
+    version: 1.0.0-SNAPSHOT
+  name: consume-svc
+  namespace: default
+spec:
+  ports:
+  - port: 80
+    protocol: TCP
+    targetPort: 7000
+  selector:
+    container: consumer
+    provider: fabric8
+    project: consumer
+    group: com.tibco.bw
+    app: Consumer.application
+  type: NodePort

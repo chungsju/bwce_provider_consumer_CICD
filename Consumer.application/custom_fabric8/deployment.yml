@@ -1,0 +1,37 @@
+metadata:
+  name: consumer
+kind: Deployment
+spec:
+  template:
+    metadata:
+      name: consumer
+      namespace: default
+      labels:
+        container: consumer
+        project: consumer
+    spec:
+      containers:
+      - image: chungsju/consumer
+        imagePullPolicy: Always
+        name: consumer
+        env:
+        - name: BW_APP_MONITORING_CONFIG
+          value: '{"url":"http://bwce-mon-svc:8080"}'
+        - name: PROVIDER_PORT
+          value: '8000'
+        - name: APP_CONFIG_PROFILE
+          value: docker
+        - name: CONSUMER_PORT
+          value: '7000'
+        - name: PROVIDER_HOST
+          value: provider-svc
+        - name: BW_PROFILE
+          value: Docker
+        ports:
+        - containerPort: 7000
+  replicas: 1
+  selector:
+    container: consumer
+    provider: fabric8
+    project: consumer
+    group: com.tibco.bw

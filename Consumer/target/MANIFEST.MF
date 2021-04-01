@@ -1,0 +1,19 @@
+Manifest-Version: 1.0.0.202104011701
+Bundle-SymbolicName: Consumer
+Bundle-ManifestVersion: 2
+TIBCO-BW-Edition: bwcf
+Bundle-Vendor: TIBCO Software Inc.
+TIBCO-BW-ModuleSharedVariables: META-INF/module.msv
+Require-Capability: com.tibco.bw.model; filter:="(name=bwext)",com.tib
+ co.bw.sharedresource.model; filter:="(name=bw.httpclient)",com.tibco.
+ bw.sharedresource.model; filter:="(name=bw.httpconnector)",com.tibco.
+ bw.binding.model; filter:="(name=bw.rest)",com.tibco.bw.binding.model
+ ; filter:="(name=bw.rest.reference.binding)"
+TIBCO-BW-ConfigProfile: META-INF/default.substvar
+TIBCO-BW-Version: 6.6.1 V26 2020-05-15
+Bundle-Name: Consumer Module
+Bundle-Version: 1.0.0.202104011701
+Bundle-ClassPath: .
+TIBCO-BW-ApplicationModule: META-INF/module.bwm
+TIBCO-BW-JobSharedVariables: META-INF/module.jsv
+

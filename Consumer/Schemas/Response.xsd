@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/Response" xmlns:tns="http://www.example.org/Response" elementFormDefault="qualified">
+
+    <element name="Response">
+    	<complexType>
+    		<sequence>
+                <element name="Consumer_Version" type="string"></element>
+                <element name="Provider_Version" type="string"></element>
+    			<element name="Message" type="string"></element>
+    		</sequence>
+    	</complexType>
+    </element>
+        <element name="ProviderResponse">
+    	<complexType>
+    		<sequence>
+                <element name="Provider_Version" type="string"></element>
+    			<element name="Message" type="string"></element>
+    		</sequence>
+    	</complexType>
+    </element>
+</schema>
